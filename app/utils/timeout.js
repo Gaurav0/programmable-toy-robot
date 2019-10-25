@@ -6,3 +6,11 @@ export function timeout(ms) {
     later(resolve, ms);
   });
 }
+
+export function rAF(ms) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      requestAnimationFrame(resolve);
+    }, ms);
+  });
+}

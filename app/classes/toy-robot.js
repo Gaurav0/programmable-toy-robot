@@ -1,4 +1,4 @@
-import { timeout } from '../utils/timeout';
+import { rAF } from '../utils/timeout';
 
 export const NORTH = 2;
 export const EAST = 1;
@@ -48,7 +48,7 @@ export default class ToyRobot {
     const stepX = (newX - startX) / frames;
     const stepY = (newY - startY) / frames;
     for (let i = 0; i < frames; i++) {
-      await timeout(TIMEOUT);
+      await rAF(TIMEOUT);
       const frame = i % 4;
       const posX = (startX + (i + 1) * stepX);
       const posY = (startY + (i + 1) * stepY);

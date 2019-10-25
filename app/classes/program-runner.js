@@ -13,7 +13,7 @@ Object.entries(dirMap).forEach(([str, num]) => {
   reverseDirMap[num] = str;
 });
 
-const TIMEOUT = 500;
+const TIMEOUT = 600;
 
 export default class ProgramRunner {
   isPlaced = false
