@@ -113,7 +113,7 @@ export default class ProgramRunner {
 
   report() {
     if (!this.isPlaced) {
-      return;
+      return '';
     }
     let { x, y, dir } = this.toyRobot;
     let f = reverseDirMap[dir];
