@@ -5,5 +5,10 @@
   {{this.program}}
 </textarea>
 <p></p>
-<input type="submit" {{on "click" (fn this.args.runProgram this.program)}} value="Run Program">
+<input
+  type="submit"
+  class="run-program"
+  value="Run Program"
+  {{on "click" (fn this.args.runProgram this.program)}}
+>
 <p></p>
