@@ -28,7 +28,7 @@ export default class ProgramRunner {
     let output = '';
     for (let instruction of instructions) {
       await timeout(TIMEOUT);
-      const words = instruction.trim().split(' ');
+      const words = instruction.trim().split(/\s+/);
       try {
         switch(words[0].toUpperCase()) {
           case 'PLACE':
@@ -44,7 +44,7 @@ export default class ProgramRunner {
             await this.moveForward();
             break;
           case 'REPORT':
-            output += this.report();
+            output += this.report() + '\n';
             break;
           default:
             throw new Error(`Syntax Error: instruction ${words[0]} not recognized`);
@@ -112,6 +112,9 @@ export default class ProgramRunner {
   }
 
   report() {
+    if (!this.isPlaced) {
+      return;
+    }
     let { x, y, dir } = this.toyRobot;
     let f = reverseDirMap[dir];
     return `${x},${4 - y},${f}`;

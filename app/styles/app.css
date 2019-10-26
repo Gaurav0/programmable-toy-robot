@@ -39,3 +39,11 @@
   z-index: 1;
   background-color: transparent;
 }
+
+.program-output {
+  white-space: pre-line;
+}
+
+hr {
+  margin-top: 40px;
+}
