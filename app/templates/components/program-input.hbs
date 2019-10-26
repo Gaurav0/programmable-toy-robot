@@ -1,5 +1,6 @@
 <textarea class="program-input"
   {{on "input" (set this.program (get _ "target.value"))}}
+  {{did-insert this.didInsertTextarea}}
 >
   {{this.program}}
 </textarea>

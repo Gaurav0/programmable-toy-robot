@@ -9,7 +9,7 @@ export function timeout(ms) {
 
 export function rAF(ms) {
   return new Promise(resolve => {
-    setTimeout(() => {
+    later(() => {
       requestAnimationFrame(resolve);
     }, ms);
   });

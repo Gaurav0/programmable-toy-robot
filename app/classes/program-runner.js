@@ -13,7 +13,7 @@ Object.entries(dirMap).forEach(([str, num]) => {
   reverseDirMap[num] = str;
 });
 
-const TIMEOUT = 600;
+const TIMEOUT = 800;
 
 export default class ProgramRunner {
   isPlaced = false
@@ -24,11 +24,11 @@ export default class ProgramRunner {
   }
 
   async run(program) {
-    const instructions = program.split('\n');
+    const instructions = program.trim().split('\n');
     let output = '';
     for (let instruction of instructions) {
       await timeout(TIMEOUT);
-      const words = instruction.split(' ');
+      const words = instruction.trim().split(' ');
       try {
         switch(words[0].toUpperCase()) {
           case 'PLACE':
@@ -104,6 +104,9 @@ export default class ProgramRunner {
       case SOUTH:
         y += 1;
         break;
+    }
+    if (x < 0 || x >= 5 || y < 0 || y >= 5) {
+      return;
     }
     await this.toyRobot.walkTo(x, y);
   }

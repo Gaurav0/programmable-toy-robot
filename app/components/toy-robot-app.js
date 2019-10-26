@@ -16,8 +16,7 @@ export default class ToyRobotApp extends Component {
   }
 
   @action
-  didInsertCanvas() {
-    let canvas = document.getElementById('table-top');
-    this.context = canvas.getContext('2d');
+  didInsertCanvas(element) {
+    this.context = element.getContext('2d');
   }
 }
