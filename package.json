@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "description": "Small description for programmable-toy-robot goes here",
-  "repository": "",
+  "repository": "https://github.com/gaurav0/programmable-toy-robot",
   "license": "MIT",
-  "author": "",
+  "author": "Gaurav Munjal",
   "directories": {
     "doc": "doc",
     "test": "tests"
